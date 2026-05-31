@@ -52,6 +52,11 @@ namespace KütüphaneOtomasyonu
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -66,6 +71,16 @@ namespace KütüphaneOtomasyonu
             {
                 e.Handled = true;
             }
+        }
+
+        private void SignUpForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

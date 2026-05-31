@@ -37,22 +37,22 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kütüphaneDBDataSet = new KütüphaneOtomasyonu.KütüphaneDBDataSet();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.booksTableAdapter = new KütüphaneOtomasyonu.KütüphaneDBDataSetTableAdapters.BooksTableAdapter();
             this.bookidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.booknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publishyearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borroweridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borrowdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kütüphaneDBDataSet = new KütüphaneOtomasyonu.KütüphaneDBDataSet();
+            this.booksTableAdapter = new KütüphaneOtomasyonu.KütüphaneDBDataSetTableAdapters.BooksTableAdapter();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kütüphaneDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kütüphaneDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -69,11 +69,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(43, 18);
+            this.label3.Location = new System.Drawing.Point(19, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(239, 36);
+            this.label3.Size = new System.Drawing.Size(286, 36);
             this.label3.TabIndex = 11;
-            this.label3.Text = "KİTAP İADE ET";
+            this.label3.Text = "KİTAP İADE ETME";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
@@ -101,7 +101,7 @@
             this.button1.BackColor = System.Drawing.Color.IndianRed;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(301, 355);
+            this.button1.Location = new System.Drawing.Point(306, 384);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(194, 45);
             this.button1.TabIndex = 28;
@@ -114,7 +114,7 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(3, 112);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(796, 203);
+            this.groupBox1.Size = new System.Drawing.Size(796, 255);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
@@ -135,22 +135,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(790, 182);
+            this.dataGridView1.Size = new System.Drawing.Size(790, 234);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // kütüphaneDBDataSet
-            // 
-            this.kütüphaneDBDataSet.DataSetName = "KütüphaneDBDataSet";
-            this.kütüphaneDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataMember = "Books";
-            this.booksBindingSource.DataSource = this.kütüphaneDBDataSet;
-            // 
-            // booksTableAdapter
-            // 
-            this.booksTableAdapter.ClearBeforeFill = true;
             // 
             // bookidDataGridViewTextBoxColumn
             // 
@@ -200,6 +186,20 @@
             this.borrowdateDataGridViewTextBoxColumn.Name = "borrowdateDataGridViewTextBoxColumn";
             this.borrowdateDataGridViewTextBoxColumn.Width = 125;
             // 
+            // booksBindingSource
+            // 
+            this.booksBindingSource.DataMember = "Books";
+            this.booksBindingSource.DataSource = this.kütüphaneDBDataSet;
+            // 
+            // kütüphaneDBDataSet
+            // 
+            this.kütüphaneDBDataSet.DataSetName = "KütüphaneDBDataSet";
+            this.kütüphaneDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // booksTableAdapter
+            // 
+            this.booksTableAdapter.ClearBeforeFill = true;
+            // 
             // BookReturnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,9 +211,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BookReturnForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BookReturnForm";
+            this.Text = "Kitap İade";
             this.Load += new System.EventHandler(this.BookReturnForm_Load_1);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -221,8 +222,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kütüphaneDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kütüphaneDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

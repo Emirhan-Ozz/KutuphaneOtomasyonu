@@ -12,7 +12,10 @@ namespace KütüphaneOtomasyonu
         public AdminMainForm()
         {
             InitializeComponent();
-            label1.Text = "Hoş geldiniz " + AppState.userName + "," + " lütfen ne yapmak istediğinizi seçin.";   
+            label1.Text = "Hoş geldiniz " + AppState.userName + "!";
+
+            textBox1.KeyPress += textBox1_KeyPress;
+            textBox2.KeyPress += textBox2_KeyPress;
         }
 
         private void AdminMainForm_Load(object sender, EventArgs e)
@@ -94,37 +97,6 @@ namespace KütüphaneOtomasyonu
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells["book_name"].Value.ToString();
-                maskedTextBox1.Text = dataGridView1.Rows[e.RowIndex].Cells["publish_year"].Value.ToString();
-                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells["author"].Value.ToString();
-            }
-        }
-
-        private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
             if (dataGridView1.CurrentRow == null)
             {
                 MessageBox.Show("Lütfen güncellenecek kitabı seçin!");
@@ -136,7 +108,6 @@ namespace KütüphaneOtomasyonu
                 MessageBox.Show("Lütfen tüm alanları doldurun!");
                 return;
             }
-
 
             try
             {
@@ -162,6 +133,56 @@ namespace KütüphaneOtomasyonu
             {
                 con.Close();
                 Listele();
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells["book_name"].Value.ToString();
+                maskedTextBox1.Text = dataGridView1.Rows[e.RowIndex].Cells["publish_year"].Value.ToString();
+                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells["author"].Value.ToString();
+            }
+        }
+
+        private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult sonuc = MessageBox.Show(
+                "Çıkış yapmak istiyor musunuz?",
+                "Çıkış",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (sonuc == DialogResult.Yes)
+            {
+                LoginForm login = new LoginForm();
+                login.Show();
+                this.Hide();
             }
         }
     }

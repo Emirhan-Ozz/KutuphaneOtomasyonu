@@ -9,7 +9,7 @@ namespace KütüphaneOtomasyonu
         public UserMainForm()
         {
             InitializeComponent();
-            label1.Text = "Hoş geldiniz " + AppState.userName + " " + "lütfen ne işlem yapmak istediğinizi seçiniz.";
+            label1.Text = "Hoş geldin " + AppState.userName + "," + " lütfen ne işlem yapmak istediğini seç.";
             
         }
 
@@ -33,6 +33,11 @@ namespace KütüphaneOtomasyonu
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserMainForm_Load(object sender, EventArgs e)
         {
 
         }
